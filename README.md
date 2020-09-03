@@ -63,9 +63,12 @@ Next, I split the data into a training and test set based on Season. I set seaso
 I tried out six different models and evaluated them on Mean Squared Error (MSE). I chose MSE because I wanted the model to be sensitive to outliers since I believe missing out on a really great player could make or break a season. *Side note: MSE is also quicker for learning, however, my dataset is fairly small so I'm not sure there would have been a noticeable difference.*
 
 I tried six different models to predict MLB offensive fantasy value (FV):
-- Multiple Linear Regression &mdash; Baseline for the model
-- Random Forest &mdash; mainly used because I was exploring different models
-- XGBoost &mdash; same reason as Random Forest
+- **Multiple Linear Regression** &mdash; Baseline for the model.
+- **Random Forest** &mdash; Mainly used because I was exploring different models.
+- **XGBoost** &mdash; Same reason as Random Forest.
+- **Elastic Net** &mdash; I wanted a model that could perform feature selection. I also wanted to experiment and get practice with the Elastic Net model.
+- **LightGBM** &mdash; Same reason as other decision tree models.
+- **SVM** &mdash; I wanted experience with an SVM.
 
 ## Model Performance
 The Elastic Net model outperformed the other models.
