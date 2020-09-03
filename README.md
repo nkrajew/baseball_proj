@@ -68,7 +68,7 @@ I tried six different models to predict MLB offensive fantasy value (FV):
 - **XGBoost** &mdash; Same reason as Random Forest.
 - **Elastic Net** &mdash; I wanted a model that could perform feature selection. I also wanted to experiment and get practice with the Elastic Net model.
 - **LightGBM** &mdash; Same reason as other decision tree models.
-- **SVM** &mdash; I wanted experience with an SVM.
+- **SVM** &mdash; I wanted experience with an SVM and since my data set was small I used it here.
 
 ## Model Performance
 The Elastic Net model outperformed the other models.
