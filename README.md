@@ -15,11 +15,11 @@
 Raw Stats - https://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=y&type=8&season=2020&month=0&season1=2020&ind=0 \
 ADP Data - https://fantasydata.com/mlb/fantasy-baseball-adp-rankings/hitters?season=2018&position=3
 
-Pulled the data below from the sources listed above (somewhat arbitrarily grouped into bulleted items for readability):
+Pulled the raw data below from the sources listed above (somewhat arbitrarily grouped into bulleted items for readability):
 - FanGraphs:
   - Season, Name, Team, Age, playerid
-  - G, PA
-  - HR, R, RBI, SB, AVG
+  - PA (only pulled players with minimum 400 PAs)
+  - G, HR, R, RBI, SB, AVG
   - BB%, K%
   - ISO, BABIP, OBP, SLG
   - wOBA, wRC+, Off
@@ -27,3 +27,51 @@ Pulled the data below from the sources listed above (somewhat arbitrarily groupe
   - BsR
   - O-Swing%, Z-Swing%, O-Contact%, Z-Contact%
   - GB/FB, LD%, GB%, HR/F
+- FantasyData:
+  - RK
+  - ID
+  - Name
+  - ADP
+
+## Data Cleaning and Creation (in Excel)
+After pulling the raw data, I needed to create some new variables and create the target variable. I also needed to clean some of the data as well.
+- Engineered the following data for evaluation:
+  - HR_rate: HR/G
+  - R_rate: R/G
+  - RBI_rate: RBI/G
+  - SB_rate: SB/G
+  - HR_rate_std: standardized HR_rate
+  - R_rate_std: standardized R_rate
+  - RBI_rate_std: standardized RBI_rate
+  - SB_rate_std: standardized SB_rate
+  - AVG_std: standardized AVG
+  - f_val_std: summation of above 5 standardized metrics
+  - ny_f_val_std: the f_val_std for the player's next season (this is the target)
+  - New Rank (used in ADP to re-rank after removing players that did not meet 400 PA minimum)
+- Filtered out sntries where ny_f_val_std was blank (due to players retiring, getting injured, etc.)
+
+## EDA 
+*placeholder*
+
+## Model Building
+Based on the findings from the EDA, I created a data frame with only the most correlated features greatly reducing the total features to only six.
+
+Next, I split the data into a training and test set based on Season. I set seasons 2010-2015 as the training set and seasons 2016 and 2017 as the test set. The number of useable seasons is one less than the number of seasons I pulled since the target value is for the "next year". 
+
+*Note: Because I use an Elastic Net model (discussed next) and it can correct for multicollinearity, a separate dataset retianing more features was used to build that model. Instead of being normalized, the fetures in this data set were standardized in accordance with the Elastic Net requirements.*
+
+I tried out six different models and evaluated them on Mean Squared Error (MSE). I chose MSE because I wanted the model to be sensitive to outliers since I believe missing out on a really great player could make or break a season. *Side note: MSE is also quicker for learning, however, my dataset is fairly small so I'm not sure there would have been a noticeable difference.*
+
+I tried six different models to predict MLB offensive fantasy value (FV):
+- Multiple Linear Regression &mdash; Baseline for the model
+- Random Forest &mdash; mainly used because I was exploring different models
+- XGBoost &mdash; same reason as Random Forest
+
+## Model Performance
+The Elastic Net model outperformed the other models.
+- Linear Regression: MSE = 8.63
+- Random Forest: MSE = 8.65
+- XGBoost: MSE = 8.85
+- Elastic Net: MSE = 8.03
+- LightGBM: MSE = 9.75
+- SVM: MSE = 8.71
