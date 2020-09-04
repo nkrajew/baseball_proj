@@ -34,7 +34,7 @@ Pulled the raw data below from the sources listed above (somewhat arbitrarily gr
   - ADP
 
 ## Data Cleaning and Creation (in Excel)
-After pulling the raw data, I needed to create some new variables and create the target variable. I also needed to clean some of the data as well.
+After pulling the raw data, I needed to create some new variables and create the target variable. I needed to clean some of the data as well.
 - Engineered the following data for evaluation:
   - HR_rate: HR/G
   - R_rate: R/G
@@ -48,7 +48,7 @@ After pulling the raw data, I needed to create some new variables and create the
   - f_val_std: summation of above 5 standardized metrics
   - ny_f_val_std: the f_val_std for the player's next season (this is the target)
   - New Rank (used in ADP to re-rank after removing players that did not meet 400 PA minimum)
-- Filtered out sntries where ny_f_val_std was blank (due to players retiring, getting injured, etc.)
+- Filtered out entries where ny_f_val_std was blank (due to players retiring, getting injured, etc.)
 
 ## EDA 
 I investigated the correlation strength with the target, potential collinearity, and shape of the target distribution. Attached are some images of the analysis.
