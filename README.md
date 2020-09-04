@@ -75,11 +75,11 @@ I tried six different models to predict MLB offensive fantasy value (FV):
 
 ## Model Performance
 The Elastic Net model outperformed the other models.
-- Linear Regression: MSE = 8.63
+- Linear Regression: MSE = 8.64
 - Random Forest: MSE = 8.65
-- XGBoost: MSE = 8.85
-- **Elastic Net: MSE = 8.03**
-- LightGBM: MSE = 9.75
+- XGBoost: MSE = 8.74
+- **Elastic Net: MSE = 8.06**
+- LightGBM: MSE = 9.95
 - SVM: MSE = 8.71
 
 ## Comparison to ADP Rankings
@@ -87,6 +87,7 @@ I compared the results of the Elastic Net model against the pre-season rankings 
 
 The main evaluation is on a metric I called Top Performer Ratio which is:
 *placeholder for image*
+![alt text](https://github.com/nkrajew/baseball_proj/blob/master/TPR_formula.PNG "TPR Formula")
 
 Other evaluation metrics used:
 - **Missed Predictions**: The number of predictions that were incorrectly placed inside/outside of the top 50%
@@ -95,3 +96,20 @@ Other evaluation metrics used:
 - **Total Value**: Value Found - Missed Target Value
 
 **Results**
+![alt text](https://github.com/nkrajew/baseball_proj/blob/master/Results_vs_ADP.PNG "Results v ADP")
+
+Disappointingly, the model performs worse than ADP rankings. However, this provides me with an opportunity to further tinker with the model and see if I can improve its predictive power!
+
+**Potential Next Steps**
+- **Find additional features to add**
+    - Career Stats
+    - Injury Proneness (# of injuries)
+    - Home Park (Team could be used as proxy)
+    - League (AL vs. NL)
+- **Investigate model's missed predictions**
+    - Could help understand where performance is suffering compared to ADP
+- **Change to classification model**
+    - Since end comparison relies on properly categorizing players, a classification model might be better suited
+    - Regression model could be useful when determining "how much better" a player is from the next
+- **Align training penalty to end goal**
+    - Results only care about top 50% right/wrong, so model should be optimized for correctly predicting FV for top performers and care less about correctly aligning FV on poor performers. 
