@@ -1,9 +1,9 @@
 # Fantasy Baseball Prediction Model: Project Overview
 - Created a machine learning model to predict MLB players’ offensive fantasy value for the next season given their past statistics to help in future fantasy baseball drafts.
 - Compared output of model to historical ADP rankings to see if the model gave me an edge over ADP.
-- Downloaded 9 years of historical data (2010-2018) from FanGraphs (link in Data Sources section below)
-- Manipulated the raw data to create a "Fantasy Value" and the input dataset for the models
-- Optimized Linear, Elastic Net, Random Forest, XGBoost, LightGBM, and SVM models using GridSearchCV (LightGBM used BayesianOptimization) to reach the best model
+- Downloaded 9 years of historical data (2010-2018) from FanGraphs (link in Data Sources section below).
+- Manipulated the raw data to create a "Fantasy Value" and the input dataset for the models.
+- Optimized Linear, Elastic Net, Random Forest, XGBoost, LightGBM, and SVM models using GridSearchCV (LightGBM used BayesianOptimization) to reach the best model.
 
 ## Code and Resources Used
 **Python Version:** 3.7\
@@ -81,3 +81,17 @@ The Elastic Net model outperformed the other models.
 - **Elastic Net: MSE = 8.03**
 - LightGBM: MSE = 9.75
 - SVM: MSE = 8.71
+
+## Comparison to ADP Rankings
+I compared the results of the Elastic Net model against the pre-season rankings as determined by ADP. The two ranking systems were compared by placing each player into a group _x_ out of *n* groups based on their Predicted FV or ADP, whichever is applicable. The same will be done for Target FV. The prediction/rankings were then compared and scored. I only evaluated the top 50% of players (determined by Target FV) as they can be considered the league's "top performers" and thus would be players you would care about predicting correctly. 
+
+The main evaluation is on a metric I called Top Performer Ratio which is:
+*placeholder for image*
+
+Other evaluation metrics used:
+- **Missed Predictions**: The number of predictions that were incorrectly placed inside/outside of the top 50%
+- **Missed Target Value**: The total Target Value of the players that were incorrectly predicted outside of the top 50% 
+- **Value Found**: The total Target Value of players that were correctly predicted inside the top 50%
+- **Total Value**: Value Found - Missed Target Value
+
+**Results**
