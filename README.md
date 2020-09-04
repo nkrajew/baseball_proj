@@ -95,13 +95,13 @@ Other evaluation metrics used:
 - **Value Found**: The total Target Value of players that were correctly predicted inside the top 50%
 - **Total Value**: Value Found - Missed Target Value
 
-**Results**
+### Results
 
 ![alt text](https://github.com/nkrajew/baseball_proj/blob/master/Results_vs_ADP.PNG "Results v ADP")
 
 Disappointingly, the model performs worse than ADP rankings. However, this provides me with an opportunity to further tinker with the model and see if I can improve its predictive power!
 
-**Potential Next Steps**
+## Potential Next Steps
 - **Find additional features to add**
     - Career Stats
     - Injury Proneness (# of injuries)
