@@ -52,7 +52,7 @@ After pulling the raw data, I needed to create some new variables and create the
 
 ## EDA 
 I investigated the correlation strength with the target, potential collinearity, and shape of the target distribution. Attached are some images of the analysis.
-![alt text](https://github.com/nkrajew/baseball_proj/blob/master/corr_matrix.png "Correlation Matrix")
+![alt text](https://github.com/nkrajew/baseball_proj/blob/master/corr_matrix_image.png "Correlation Matrix")
 ![alt text](https://github.com/nkrajew/baseball_proj/blob/master/pair_plot.png "Pair Plot")
 ![alt text](https://github.com/nkrajew/baseball_proj/blob/master/target_distribution.png "Target Distribution")
 
