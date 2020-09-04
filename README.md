@@ -2,7 +2,7 @@
 - Created a machine learning model to predict MLB players’ offensive fantasy value for the next season given their past statistics to help in future fantasy baseball drafts.
 - Compared output of model to historical ADP rankings to see if the model gave me an edge over ADP.
 - Downloaded 9 years of historical data (2010-2018) from FanGraphs (link in Data Sources section below)
-- Manipulated the raw data to create a "Fantasy Value"
+- Manipulated the raw data to create a "Fantasy Value" and the input dataset for the models
 - Optimized Linear, Elastic Net, Random Forest, XGBoost, LightGBM, and SVM models using GridSearchCV (LightGBM used BayesianOptimization) to reach the best model
 
 ## Code and Resources Used
@@ -33,18 +33,18 @@ Pulled the raw data below from the sources listed above (somewhat arbitrarily gr
   - Name
   - ADP
 
-## Data Cleaning and Creation (in Excel)
+## Data Cleaning and Creation (in Data Prep notebook)
 After pulling the raw data, I needed to create some new variables and create the target variable. I needed to clean some of the data as well.
 - Engineered the following data for evaluation:
   - HR_rate: HR/G
   - R_rate: R/G
   - RBI_rate: RBI/G
   - SB_rate: SB/G
-  - HR_rate_std: standardized HR_rate
-  - R_rate_std: standardized R_rate
-  - RBI_rate_std: standardized RBI_rate
-  - SB_rate_std: standardized SB_rate
-  - AVG_std: standardized AVG
+  - HR_rate_std: standardized HR_rate by year
+  - R_rate_std: standardized R_rate by year
+  - RBI_rate_std: standardized RBI_rate by year
+  - SB_rate_std: standardized SB_rate by year
+  - AVG_std: standardized AVG by year
   - f_val_std: summation of above 5 standardized metrics
   - ny_f_val_std: the f_val_std for the player's next season (this is the target)
   - New Rank (used in ADP to re-rank after removing players that did not meet 400 PA minimum)
