@@ -61,7 +61,7 @@ Based on the findings from the EDA, I created a data frame with only the most co
 
 Next, I split the data into a training and test set based on Season. I set seasons 2010-2015 as the training set and seasons 2016 and 2017 as the test set. The number of useable seasons is one less than the number of seasons I pulled since the target value is for the "next year". 
 
-*Note: Because I use an Elastic Net model (discussed next) and it can correct for multicollinearity, a separate dataset retianing more features was used to build that model. Instead of being normalized, the fetures in this data set were standardized in accordance with the Elastic Net requirements.*
+*Note: Because I used an Elastic Net model (discussed next) which can correct for multicollinearity, a separate dataset retaining more features was created to build that model. Instead of being normalized, the features in this dataset were standardized in accordance with the Elastic Net requirements.*
 
 I tried out six different models and evaluated them on Mean Squared Error (MSE). I chose MSE because I wanted the model to be sensitive to outliers since I believe missing out on a really great player could make or break a season. *Side note: MSE is also quicker for learning, however, my dataset is fairly small so I'm not sure there would have been a noticeable difference.*
 
@@ -69,7 +69,7 @@ I tried six different models to predict MLB offensive fantasy value (FV):
 - **Multiple Linear Regression** &mdash; Baseline for the model.
 - **Random Forest** &mdash; Mainly used because I was exploring different models.
 - **XGBoost** &mdash; Same reason as Random Forest.
-- **Elastic Net** &mdash; I wanted a model that could perform feature selection. I also wanted to experiment and get practice with the Elastic Net model.
+- **Elastic Net** &mdash; I wanted a model that could perform feature selection and correct for multicollinearity. Elastic Net is basically a best-of-both-worlds since it combines the effects of LASSO and Ridge Regression.
 - **LightGBM** &mdash; Same reason as other decision tree models.
 - **SVM** &mdash; I wanted experience with an SVM and since my data set was small I used it here.
 
@@ -78,6 +78,6 @@ The Elastic Net model outperformed the other models.
 - Linear Regression: MSE = 8.63
 - Random Forest: MSE = 8.65
 - XGBoost: MSE = 8.85
-- Elastic Net: MSE = 8.03
+- **Elastic Net: MSE = 8.03**
 - LightGBM: MSE = 9.75
 - SVM: MSE = 8.71
