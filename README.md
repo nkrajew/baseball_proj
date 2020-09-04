@@ -96,6 +96,7 @@ Other evaluation metrics used:
 - **Total Value**: Value Found - Missed Target Value
 
 **Results**
+
 ![alt text](https://github.com/nkrajew/baseball_proj/blob/master/Results_vs_ADP.PNG "Results v ADP")
 
 Disappointingly, the model performs worse than ADP rankings. However, this provides me with an opportunity to further tinker with the model and see if I can improve its predictive power!
