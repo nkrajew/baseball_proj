@@ -51,7 +51,10 @@ After pulling the raw data, I needed to create some new variables and create the
 - Filtered out sntries where ny_f_val_std was blank (due to players retiring, getting injured, etc.)
 
 ## EDA 
-*placeholder*
+I investigated the correlation strength with the target, potential collinearity, and shape of the target distribution. Attached are some images of the analysis.
+![alt text](https://github.com/nkrajew/baseball_proj/blob/master/corr_matrix.png "Correlation Matrix")
+![alt text](https://github.com/nkrajew/baseball_proj/blob/master/pair_plot.png "Pair Plot")
+![alt text](https://github.com/nkrajew/baseball_proj/blob/master/target_distribution.png "Target Distribution")
 
 ## Model Building
 Based on the findings from the EDA, I created a data frame with only the most correlated features greatly reducing the total features to only six.
