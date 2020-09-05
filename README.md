@@ -52,9 +52,9 @@ After pulling the raw data, I needed to create some new variables and create the
 
 ## EDA 
 I investigated the correlation strength with the target, any potential collinearity, and the shape of the target distribution. I used these findings to adjust the data frames I used in the predictions notebook. Attached are some images of the analysis.\
-![alt text](https://github.com/nkrajew/baseball_proj/blob/master/corr_matrix_image.png "Correlation Matrix")
-![alt text](https://github.com/nkrajew/baseball_proj/blob/master/pair_plot_resized.png "Pair Plot")
-![alt text](https://github.com/nkrajew/baseball_proj/blob/master/target_distribution.png "Target Distribution")
+![alt text](https://github.com/nkrajew/baseball_proj/blob/master/pictures/corr_matrix_image.png "Correlation Matrix")
+![alt text](https://github.com/nkrajew/baseball_proj/blob/master/pictures/pair_plot_resized.png "Pair Plot")
+![alt text](https://github.com/nkrajew/baseball_proj/blob/master/pictures/target_distribution.png "Target Distribution")
 
 ## Model Building
 Based on the findings from the EDA, I created a data frame with only the most correlated features greatly reducing the total features to only six.
@@ -87,7 +87,7 @@ I compared the results of the Elastic Net model against the pre-season rankings 
 
 The main evaluation is on a metric I called Top Performer Ratio which is:
 *placeholder for image*
-![alt text](https://github.com/nkrajew/baseball_proj/blob/master/TPR_formula.PNG "TPR Formula")
+![alt text](https://github.com/nkrajew/baseball_proj/blob/master/pictures/TPR_formula.PNG "TPR Formula")
 
 Other evaluation metrics used:
 - **Missed Predictions**: The number of predictions that were incorrectly placed inside/outside of the top 50%
@@ -97,7 +97,7 @@ Other evaluation metrics used:
 
 ### Results
 
-![alt text](https://github.com/nkrajew/baseball_proj/blob/master/Results_vs_ADP.PNG "Results v ADP")
+![alt text](https://github.com/nkrajew/baseball_proj/blob/master/pictures/Results_vs_ADP.PNG "Results v ADP")
 
 Disappointingly, the model performs worse than ADP rankings. However, this provides me with an opportunity to further tinker with the model and see if I can improve its predictive power!
 
