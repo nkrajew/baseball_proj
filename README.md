@@ -86,7 +86,6 @@ The Elastic Net model outperformed the other models.
 I compared the results of the Elastic Net model against the pre-season rankings as determined by ADP. The two ranking systems were compared by placing each player into a group _x_ out of *n* groups based on their Predicted FV or ADP, whichever is applicable. The same will be done for Target FV. The prediction/rankings were then compared and scored. I only evaluated the top 50% of players (determined by Target FV) as they can be considered the league's "top performers" and thus would be players you would care about predicting correctly. 
 
 The main evaluation is on a metric I called Top Performer Ratio which is:
-*placeholder for image*
 ![alt text](https://github.com/nkrajew/baseball_proj/blob/master/pictures/TPR_formula.PNG "TPR Formula")
 
 Other evaluation metrics used:
